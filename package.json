@@ -1,0 +1,38 @@
+{
+  "name": "hide-dash-overview",
+  "version": "1.0.0",
+  "description": "A GNOME Extension to hide Dash (deck) in Overview",
+  "keywords": [
+    "GNOME Shell",
+    "extension"
+  ],
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PendaGTP/hide-dash-overview.git"
+  },
+  "author": "PendaGTP <38917281+PendaGTP@users.noreply.github.com>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/PendaGTP/hide-dash-overview/issues"
+  },
+  "homepage": "https://github.com/PendaGTP/hide-dash-overview",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@girs/gjs": "^4.0.0-beta.38",
+    "@girs/gnome-shell": "^49.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.38.0",
+    "eslint-config-gnome": "git+https://gitlab.gnome.org/World/javascript/eslint-config-gnome.git",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": "^22.0.0"
+  }
+}

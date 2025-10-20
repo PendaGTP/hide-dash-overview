@@ -1,0 +1,8 @@
+{
+    "uuid": "hide-dash-overview@PendaGTP",
+    "name": "Hide Dash in Overview",
+    "gettext-domain": "hide-dash",
+    "description": "Hide Dash (deck) in Activities Overview",
+    "shell-version": ["44", "45", "46", "47", "48", "49"],
+    "url": "https://github.com/PendaGTP/hide-dash-overview"
+}

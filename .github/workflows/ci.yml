@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - run: make lint
+
+      - run: make pack
+
+      - name: Attest
+        uses: actions/attest-build-provenance@v3
+        if: github.ref_type == 'tag'
+        with:
+          subject-path: ./hide-dash-overview@PendaGTP.zip
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          files: ./hide-dash-overview@PendaGTP.zip
